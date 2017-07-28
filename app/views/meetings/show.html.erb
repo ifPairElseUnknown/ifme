@@ -2,3 +2,6 @@
 <%= render :partial => '/shared/meeting_info', locals: { meeting: @meeting, is_leader: @is_leader, show_group: true } %>
 
 <%= render :partial => '/shared/comments', locals: { data: @meeting, comments: @comments, comment: @comment, no_hide_page: @no_hide_page, comment_type: 'meeting', is_member: @is_member, is_leader: @is_leader } %>
+
+<%= button_to "Save to Google Calendar", save_to_calendar(meeting: @meeting.name) %>
+<%= meeting_url(@meeting.save_to_calendar) if @meeting.save_to_calendar %>

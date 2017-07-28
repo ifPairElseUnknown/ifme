@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class MeetingsController < ApplicationController
+  helper_method :save_refill_to_google_calendar
   before_action :set_meeting, only: %i[show edit update destroy]
 
   # GET /meetings/1
