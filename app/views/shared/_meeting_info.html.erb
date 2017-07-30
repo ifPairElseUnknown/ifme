@@ -42,6 +42,8 @@
   <%= get_meeting_members(meeting) %>
 </strong>
 
+<%= link_to("Add to Google Calendar", meetings_google_calendar_events_path, method: :post) %>
+
 <% if meeting.leaders.include? current_user %>
   <br>
   <br>

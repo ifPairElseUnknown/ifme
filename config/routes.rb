@@ -61,6 +61,10 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :meetings do
+    resources :google_calendar_events, only: [:create]
+  end
+
   resources :profile, :except => [:show, :new, :create, :edit, :update, :destroy]
 
   resources :search, :except => [:show, :new, :create, :edit, :update, :destroy] do
